@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <main class="container">
+        <form action="" method="post">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="email" placeholder="Usuário" autocomplete="on">
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Senha" autocomplete="on" id="senha">
+                <i class="bx bxs-lock-alt" id="ico" onclick="see()"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label for="iremember">
+                    <input type="checkbox" name="remember" id="iremember">
+                    Lembrar Senha
+                </label>
+                <a href="#">Esqueci a senha</a>
+            </div>
+
+            <input type="submit" value="Login" class="login">
+
+            <div class="register-link">
+                 <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+            </div>
+        </form>
+    </main>
+    <script>
+        function see() {
+            input = document.getElementById('senha')
+            icon = document.getElementById('ico')
+
+            if (input.type === "password") {
+                input.type = "text"
+                icon.classList.remove("bxs-lock-alt")
+                icon.classList.add("bx-lock-open")
+                
+            } else {
+                input.type = "password"
+                icon.classList.remove()
+                icon.classList.add("bxs-lock-alt")
+            }
+        }
+    </script>
+</body>
+</html>
